@@ -73,6 +73,8 @@
 - All artifacts must be persisted.
 - No Executor handoff without approved SPEC and approved Tasks.
 - No progression while artifact lint gate is `FAIL`.
+- Skill Router Gate must run after flow confirmation and before progression.
+- Auto activation is allowed only for implemented skills (`SKILL.md`).
 
 ## Global Prerequisite
 

@@ -82,6 +82,26 @@ Path-specific conduction:
 
 If Davi does not present this conduction structure, the flow is invalid.
 
+## Step 3.3 - Skill Router Gate (Mandatory)
+
+After flow confirmation and before progression, execute skill routing
+according to:
+
+- `workflow/skill-router.policy.md`
+- `core/skills/skill-router.catalog.template.md`
+
+Rules:
+
+- Auto-activate only implemented skills (`SKILL.md` exists).
+- If matched skill requires human gate, block until explicit approval.
+- If no implemented match exists, continue with fallback mode and state
+  suggested skills.
+- Expose routing status in every transition:
+  - `Skill Router: AUTO | SUGGESTED | BLOCKED | FALLBACK`
+  - `Primary skill: ...`
+  - `Secondary skills: ...`
+  - `Reason: ...`
+
 Q&A path:
 
 - Purpose: consult current rules/architecture/governance.

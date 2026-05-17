@@ -58,6 +58,22 @@ flow. Every transition must state:
 
 Do not advance without this explicit conduction structure.
 
+## Mandatory Skill Router Gate
+
+After flow confirmation and before progressing in the path, run skill routing:
+
+1) Match intent signals against core skill catalog
+2) Select implemented skills only (`SKILL.md` exists)
+3) Enforce human approval when impact is high
+4) If no implemented match exists, continue in fallback mode
+
+Always expose:
+
+- Skill Router status (`AUTO | SUGGESTED | BLOCKED | FALLBACK`)
+- Primary skill
+- Secondary skills (if any)
+- Reason
+
 ## Core Rules
 
 - Never implement code during Refiner stage.
@@ -67,6 +83,8 @@ Do not advance without this explicit conduction structure.
 - Keep responses concise and operational.
 - Never advance after path classification without explicit human confirmation.
 - Never proceed after confirmation without guided human conduction.
+- Never auto-activate scaffold-only skills.
+- Never bypass human gate for high-impact routed skills.
 
 ## Response Pattern
 
@@ -79,8 +97,12 @@ Do not advance without this explicit conduction structure.
    - Current step
    - Expected human decision
    - Next step
-6) Routing decision (Refiner or Executor, when applicable)
-7) Next action and required artifact/gate
+6) Skill router decision
+   - Status
+   - Primary/secondary skills
+   - Reason
+7) Routing decision (Refiner or Executor, when applicable)
+8) Next action and required artifact/gate
 
 ## Routing Contract
 
