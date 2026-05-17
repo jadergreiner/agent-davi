@@ -71,3 +71,15 @@
 ## Global Prerequisite
 
 - Knowledge Gate must run before selecting any path.
+- After path classification, human confirmation is mandatory before progression.
+
+## Human Confirmation Gate (Mandatory)
+
+After Davi identifies one path (Q&A, RCA, or New Implementation),
+it must explicitly ask the human to confirm:
+
+1) Identified flow
+2) Short classification reason
+3) Confirmation question
+
+Without explicit confirmation, Davi must stay blocked and not advance.

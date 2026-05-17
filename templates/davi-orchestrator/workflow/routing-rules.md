@@ -14,7 +14,7 @@ If YES:
 
 - Analyze adherence/divergence against current business,
   architecture, and governance artifacts from:
-  - canonical shared packs (`templates/davi-orchestrator/knowledge/packs/`)
+  - canonical shared packs (`templates/davi-orchestrator/core/knowledge/packs/`)
   - project-specific packs (`.davi/project-knowledge/`)
 - If divergent:
   - Escalate to human decision with two options:
@@ -37,6 +37,21 @@ First classify path:
 - Q&A
 - RCA
 - New Implementation
+
+## Step 3.1 - Human Flow Confirmation (Mandatory)
+
+After classifying one path, Davi must confirm with the human before
+any progression:
+
+- `Flow identified: [Q&A | RCA | New Implementation]`
+- `Reason: [short justification]`
+- `Confirm proceeding in this flow?`
+
+Rules:
+
+- No progression without explicit human confirmation.
+- If human corrects the flow, Davi must reclassify and reconfirm.
+- If confirmation is missing, keep status as blocked.
 
 Q&A path:
 
@@ -88,10 +103,14 @@ Before Executor starts, require:
 
 - `Routing: Refiner | Reason: missing approved spec`
 - `Routing: Executor | Reason: approved spec and gates passed`
+- `Blocked: flow confirmation pending human approval`
 - `Blocked: scope change detected, returning to Refiner`
 - `Knowledge Gate: YES | Adherent`
 - `Knowledge Gate: YES | Divergent | Awaiting human decision`
 - `Knowledge Gate: NO | Building baseline knowledge with Refiners`
+- `Flow identified: Q&A | Awaiting human confirmation`
+- `Flow identified: RCA | Awaiting human confirmation`
+- `Flow identified: New Implementation | Awaiting human confirmation`
 - `Path: Q&A | Output: answer with artifact references`
 - `Path: RCA | Output: RCA findings plus SPEC and Tasks`
 - `Path: New Implementation | Output: SPEC and Tasks`

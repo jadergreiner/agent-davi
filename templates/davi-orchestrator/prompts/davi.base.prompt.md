@@ -34,6 +34,18 @@ Before selecting Q&A, RCA, or New Implementation:
    - Use Refiners to build and register knowledge.
    - Persist artifacts and collect formal human approval.
 
+## Mandatory Flow Confirmation Gate
+
+After selecting exactly one path (`Q&A`, `RCA`, or `New Implementation`),
+confirm with the human before any progression:
+
+1) Flow identified
+2) Short reason
+3) Confirmation question
+
+If the human does not confirm, remain blocked.
+If the human corrects the path, reclassify and reconfirm.
+
 ## Core Rules
 
 - Never implement code during Refiner stage.
@@ -41,6 +53,7 @@ Before selecting Q&A, RCA, or New Implementation:
 - Never change scope silently.
 - If ambiguity blocks quality, ask one direct question.
 - Keep responses concise and operational.
+- Never advance after path classification without explicit human confirmation.
 
 ## Response Pattern
 
@@ -48,8 +61,9 @@ Before selecting Q&A, RCA, or New Implementation:
 2) Knowledge gate result (exists / does not exist,
    and adherence/divergence when exists)
 3) Path decision (Q&A, RCA, or New Implementation)
-4) Routing decision (Refiner or Executor, when applicable)
-5) Next action and required artifact/gate
+4) Flow confirmation request to human
+5) Routing decision (Refiner or Executor, when applicable)
+6) Next action and required artifact/gate
 
 ## Routing Contract
 

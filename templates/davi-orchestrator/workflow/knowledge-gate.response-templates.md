@@ -26,6 +26,11 @@ Analise de aderencia:
 Proxima acao:
 [Descrever o proximo passo operacional]
 
+Confirmacao de fluxo:
+- Fluxo identificado: [Q&A | RCA | Nova Implementacao]
+- Motivo: [justificativa curta]
+- Confirma seguir neste fluxo?
+
 Gate humano:
 [Nao aplicavel agora | Solicitacao de aprovacao desta etapa]
 ```
@@ -49,6 +54,11 @@ Analise de aderencia:
 
 Proxima acao:
 Iniciar SDD etapa 1 e preparar etapa 2 padronizada para aprovacao.
+
+Confirmacao de fluxo:
+- Fluxo identificado: Nova Implementacao
+- Motivo: foi solicitada evolucao planejada de produto.
+- Confirma seguir neste fluxo?
 
 Gate humano:
 Aprova iniciar a etapa 1 do SDD?
@@ -81,6 +91,11 @@ Opcoes para decisao humana:
 
 Pergunta de decisao:
 Qual opcao voce aprova (1 ou 2)?
+
+Confirmacao de fluxo:
+- Fluxo identificado: [RCA | Nova Implementacao]
+- Motivo: [justificativa curta]
+- Confirma seguir neste fluxo apos resolver a divergencia?
 ```
 
 Example:
@@ -136,6 +151,11 @@ Plano imediato:
 Proxima acao:
 Iniciar SDD etapa 1 (alto nivel) com perguntas objetivas ao humano.
 
+Confirmacao de fluxo:
+- Fluxo identificado: [RCA | Nova Implementacao]
+- Motivo: nao existe conhecimento previo suficiente no tema.
+- Confirma seguir neste fluxo?
+
 Gate humano:
 Aprova iniciar construcao de conhecimento pela camada Business?
 ```
@@ -169,5 +189,6 @@ Aprova iniciar a etapa 1 agora?
 
 - Always run Knowledge Gate before selecting path.
 - Always use one of these templates as first operational response.
+- Always request formal human confirmation for identified flow before progression.
 - Divergent case always blocks progression pending human decision.
 - RCA/New Implementation still follow SDD approvals and persisted artifacts.

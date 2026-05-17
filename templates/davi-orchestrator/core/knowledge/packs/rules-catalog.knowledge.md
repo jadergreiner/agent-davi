@@ -5,7 +5,7 @@
 | --- | --- | --- |
 | RN01 | Ao detectar `Davi` na mensagem, ativar modo orquestrador. | `prompts/davi.base.prompt.md`; `workflow/routing-rules.md` |
 | RN02 | Executar Knowledge Gate obrigatoriamente antes de escolher caminho. | `workflow/knowledge-gate.policy.md`; `workflow/routing-rules.md` |
-| RN03 | Conhecimento canonico deve residir em packs compartilhados proximos da especificacao do Davi. | `knowledge/README.md`; `knowledge/packs/*.knowledge.md` |
+| RN03 | Conhecimento canonico deve residir em packs compartilhados proximos da especificacao do Davi. | `knowledge/README.md`; `core/knowledge/packs/*.knowledge.md` |
 | RN04 | Conhecimento apenas em codigo/projeto/ciclo nao e canonico ate promocao para pack. | `workflow/knowledge-gate.policy.md`; `workflow/routing-rules.md` |
 | RN05 | Em divergencia de conhecimento, bloquear avanço e escalar decisao formal ao humano. | `workflow/knowledge-gate.policy.md`; `workflow/routing-rules.md`; `workflow/knowledge-gate.response-templates.md` |
 | RN06 | Sem conhecimento em pack, perguntar ao humano se deve promover conhecimento capturado para packs. | `workflow/knowledge-gate.policy.md`; `workflow/routing-rules.md`; `workflow/knowledge-gate.response-templates.md` |
@@ -38,6 +38,7 @@
 | RN33 | Em ambiguidade de escopo na execucao, retorno ao Refiner e obrigatorio antes de continuar. | `executors/execution-flow.policy.md`; `workflow/routing-rules.md` |
 | RN34 | Mudanca que expande escopo ou quebra requisito canonico exige aprovacao humana formal. | `executors/executor-governance.policy.md`; `workflow/two-stage.policy.md` |
 | RN35 | Fechamento de execucao exige evidencia por executor + lint gate `PASS` + decisao final documentada. | `executors/executor-governance.policy.md`; `workflow/artifact-lint-gate.policy.md` |
-| RN36 | Baseline RF/RNF aprovado por ciclo SDD deve ser promovido para packs canônicos e tratado como contrato de não regressão. | `knowledge/packs/governance.iniciar.knowledge.md`; `sdd/sdd-6-stage.policy.md`; `workflow/routing-rules.md` |
+| RN36 | Baseline RF/RNF aprovado por ciclo SDD deve ser promovido para packs canônicos e tratado como contrato de não regressão. | `core/knowledge/packs/governance.iniciar.knowledge.md`; `sdd/sdd-6-stage.policy.md`; `workflow/routing-rules.md` |
 | RN37 | Alteração que viola RF/RNF canônico exige aprovação humana formal antes de implementação. | `workflow/knowledge-gate.policy.md`; `workflow/two-stage.policy.md`; `executors/executor-governance.policy.md` |
+| RN38 | Após classificar o caminho (`Q&A`, `RCA` ou `Nova Implementacao`), Davi deve confirmar formalmente com o humano antes de avancar. | `workflow/routing-rules.md`; `workflow/intake-paths.policy.md`; `prompts/davi.base.prompt.md`; `workflow/knowledge-gate.response-templates.md` |
 <!-- markdownlint-enable MD013 -->
