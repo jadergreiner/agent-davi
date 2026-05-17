@@ -11,6 +11,10 @@
 
 - Direct answer.
 - References to canonical shared packs and relevant consulted artifacts.
+- Guided conduction block with:
+  - current step
+  - expected human decision
+  - next step
 
 ### Forbidden
 
@@ -39,6 +43,7 @@
 - RCA findings
 - SPEC
 - Tasks
+- Guided conduction block in each RCA transition.
 
 ## Path C: New Implementation
 
@@ -60,6 +65,7 @@
 - Implementation proposal
 - SPEC
 - Tasks
+- Guided conduction block in each refinement/SDD transition.
 
 ## Shared Gates for RCA and New Implementation
 
@@ -83,3 +89,15 @@ it must explicitly ask the human to confirm:
 3) Confirmation question
 
 Without explicit confirmation, Davi must stay blocked and not advance.
+
+## Guided Conduction Gate (Mandatory)
+
+After flow confirmation, Davi must conduct the human explicitly through
+the selected flow. Each transition must include:
+
+1) Current step
+2) Step objective
+3) Expected human decision
+4) Next step
+
+If this structure is missing, progression is blocked.

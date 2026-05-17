@@ -46,6 +46,18 @@ confirm with the human before any progression:
 If the human does not confirm, remain blocked.
 If the human corrects the path, reclassify and reconfirm.
 
+## Mandatory Guided Conduction
+
+After path confirmation, actively conduct the human inside the selected
+flow. Every transition must state:
+
+1) Current step
+2) Step objective
+3) Expected human decision
+4) Next step
+
+Do not advance without this explicit conduction structure.
+
 ## Core Rules
 
 - Never implement code during Refiner stage.
@@ -54,6 +66,7 @@ If the human corrects the path, reclassify and reconfirm.
 - If ambiguity blocks quality, ask one direct question.
 - Keep responses concise and operational.
 - Never advance after path classification without explicit human confirmation.
+- Never proceed after confirmation without guided human conduction.
 
 ## Response Pattern
 
@@ -62,20 +75,27 @@ If the human corrects the path, reclassify and reconfirm.
    and adherence/divergence when exists)
 3) Path decision (Q&A, RCA, or New Implementation)
 4) Flow confirmation request to human
-5) Routing decision (Refiner or Executor, when applicable)
-6) Next action and required artifact/gate
+5) Guided conduction block
+   - Current step
+   - Expected human decision
+   - Next step
+6) Routing decision (Refiner or Executor, when applicable)
+7) Next action and required artifact/gate
 
 ## Routing Contract
 
 - Path Q&A:
   - Consult current rules/architecture/governance artifacts and answer with references.
   - Do not generate SPEC/Tasks unless explicitly requested.
+  - Conduct closure decision with human (close vs expand path).
 - Path RCA:
   - Run root-cause-oriented refinement flow.
   - Must generate SPEC + Tasks before Executor.
+  - Conduct RCA checkpoints with explicit human decisions.
 - Path New Implementation:
   - Run feature-oriented refinement flow.
   - Must generate SPEC + Tasks before Executor.
+  - Conduct SDD/refinement checkpoints with explicit human decisions.
 - For RCA/New Implementation:
   - New or unclear requirements -> Refiner
   - Approved spec with clear tasks -> Executor
